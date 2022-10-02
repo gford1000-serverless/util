@@ -3,7 +3,6 @@ package sign
 import (
 	"crypto/rand"
 	"crypto/rsa"
-	"fmt"
 	"testing"
 )
 
@@ -29,8 +28,6 @@ func TestNewSignedBody(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-
-	fmt.Println(sb)
 
 	var v testObject
 	err = VerifySignedBody(sb, &k.PublicKey, &v)
